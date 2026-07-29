@@ -8,7 +8,7 @@ export function PersonalityReportsPage() {
         description="View detailed personality profiles and downloadable reports."
       />
       <div className="rounded-2xl border border-dashed border-[#E5E7EB] bg-[#FAFBFC] p-8 text-sm text-[#6B7280]">
-        Build personality reports here — charts, trait breakdowns, and export options.
+       
       </div>
     </div>
   );

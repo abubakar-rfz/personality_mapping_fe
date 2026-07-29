@@ -8,7 +8,7 @@ export function SettingsPage() {
         description="Configure workspace preferences, integrations, and account settings."
       />
       <div className="rounded-2xl border border-dashed border-[#E5E7EB] bg-[#FAFBFC] p-8 text-sm text-[#6B7280]">
-        Build settings here — profile, workspace, notifications, and billing.
+       
       </div>
     </div>
   );

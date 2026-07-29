@@ -103,7 +103,7 @@ function NavbarBreadcrumbs() {
 
 function NavbarSearch() {
   return (
-    <div className="relative mx-auto hidden w-full max-w-xl md:block">
+    <div className="relative hidden min-w-0 flex-1 md:block md:max-w-[18rem] lg:max-w-xl">
       <Search
         aria-hidden="true"
         className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF]"
@@ -111,9 +111,9 @@ function NavbarSearch() {
       <Input
         id={SEARCH_INPUT_ID}
         type="search"
-        placeholder="Search employees, teams, projects..."
-        aria-label="Search employees, teams, projects"
-        className="h-11 pr-24 pl-11 lg:pr-28"
+        placeholder="Search employees, projects..."
+        aria-label="Search employees, projects"
+        className="h-11 w-full rounded-full border-[#E5E7EB] bg-[#F9FAFB] pr-24 pl-11 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20 lg:pr-28"
       />
       <kbd className="pointer-events-none absolute top-1/2 right-3 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-[#E5E7EB] bg-white px-2 py-0.5 text-[10px] font-medium text-[#9CA3AF] lg:inline-flex">
         Ctrl K
@@ -122,15 +122,57 @@ function NavbarSearch() {
   );
 }
 
+function NavbarMobileSearch() {
+  return (
+    <div className="mt-3 flex items-center gap-2 md:hidden">
+      <div className="relative min-w-0 flex-1">
+        <Search
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF]"
+        />
+        <Input
+          id={SEARCH_INPUT_ID}
+          type="search"
+          placeholder="Search employees, projects..."
+          aria-label="Search employees, projects"
+          className="h-11 w-full rounded-full border-[#E5E7EB] bg-[#F9FAFB] pl-11 pr-3 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20"
+        />
+      </div>
+
+      <Button
+        type="button"
+        className="h-11 rounded-full bg-[#034350] px-3 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(3,67,80,0.24)] transition-all duration-200 hover:scale-[1.01] hover:bg-[#034350]/90"
+      >
+        <Sparkles className="size-4" />
+        <span className="hidden sm:inline">Ask AI</span>
+        <span className="sm:hidden">AI</span>
+      </Button>
+    </div>
+  );
+}
+
 function NavbarActions() {
   return (
-    <>
+    <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
       <Button
         type="button"
         variant="ghost"
         size="icon"
         aria-label="Notifications"
-        className="relative hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] lg:inline-flex"
+        className="relative inline-flex size-10 rounded-full text-[#6B7280] hover:bg-[#F4F6F8] hover:text-[#111827] md:hidden"
+      >
+        <Bell className="size-5" />
+        <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px]">
+          3
+        </Badge>
+      </Button>
+
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon"
+        aria-label="Notifications"
+        className="relative hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <Bell className="size-5" />
         <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px]">
@@ -143,7 +185,7 @@ function NavbarActions() {
         variant="ghost"
         size="icon"
         aria-label="Messages"
-        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] md:inline-flex"
+        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <MessageSquare className="size-5" />
       </Button>
@@ -153,19 +195,19 @@ function NavbarActions() {
         variant="ghost"
         size="icon"
         aria-label="Toggle theme"
-        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] lg:inline-flex"
+        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] lg:inline-flex lg:h-9 lg:w-9"
       >
         <Sun className="size-5" />
       </Button>
 
       <Button
         type="button"
-        className="hidden h-10 rounded-full bg-[#034350] px-4 text-white shadow-[0_4px_16px_rgba(3,67,80,0.24)] transition-all duration-200 hover:scale-[1.02] hover:bg-[#034350]/90 md:inline-flex"
+        className="hidden h-8 rounded-full bg-[#034350] px-3 text-white shadow-[0_4px_16px_rgba(3,67,80,0.24)] transition-all duration-200 hover:scale-[1.02] hover:bg-[#034350]/90 md:inline-flex lg:h-10 lg:px-4"
       >
         <Sparkles className="size-4" />
         Ask AI
       </Button>
-    </>
+    </div>
   );
 }
 
@@ -247,46 +289,31 @@ export function TopNavbar() {
     <>
       <SearchCommand inputId={SEARCH_INPUT_ID} />
 
-      <header className="sticky top-0 z-30 shrink-0 bg-[#F8FAFC] px-4 pt-4 pb-2 md:px-6 lg:px-8">
+      <header className="sticky top-0 z-30 shrink-0 bg-[#F8FAFC] px-4 pt-4 pb-2 md:px-5 lg:px-6">
         <div
           className={cn(
-            "flex h-16 items-center gap-3 rounded-2xl bg-white px-3 transition-shadow duration-300 md:h-[72px] md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)_auto] md:gap-4 md:px-5",
+            "rounded-2xl border border-[#F1F5F9] bg-white px-3 py-3 transition-shadow duration-300 md:px-5 md:py-3",
             scrolled
               ? "shadow-[0_4px_20px_rgba(17,24,39,0.08)]"
               : "shadow-[0_1px_3px_rgba(17,24,39,0.06)]",
           )}
         >
-          <div className="flex min-w-0 items-center gap-2 md:gap-4">
-            <SidebarMobileTrigger className="md:hidden" />
-            <BrandMarkCompact />
-            <NavbarBreadcrumbs />
+          <div className="flex h-16 items-center gap-2 md:h-[72px] md:gap-4">
+            <div className="flex min-w-0 flex-1 items-center gap-2 md:gap-4">
+              <SidebarMobileTrigger className="shrink-0 md:hidden" />
+              <BrandMarkCompact />
+              <NavbarBreadcrumbs />
+            </div>
+
+            <NavbarSearch />
+
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+              <NavbarActions />
+              <ProfileMenu />
+            </div>
           </div>
 
-          <NavbarSearch />
-
-          <div className="ml-auto flex items-center gap-1 sm:gap-2 md:ml-0">
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              aria-label="Search"
-              className="text-[#6B7280] hover:scale-105 hover:text-[#111827] md:hidden"
-            >
-              <Search className="size-5" />
-            </Button>
-
-            <Button
-              type="button"
-              size="icon"
-              aria-label="Ask AI"
-              className="inline-flex size-10 rounded-full bg-[#034350] text-white shadow-[0_4px_16px_rgba(3,67,80,0.24)] transition-all duration-200 hover:scale-105 hover:bg-[#034350]/90 md:hidden"
-            >
-              <Sparkles className="size-4" />
-            </Button>
-
-            <NavbarActions />
-            <ProfileMenu />
-          </div>
+          <NavbarMobileSearch />
         </div>
       </header>
     </>

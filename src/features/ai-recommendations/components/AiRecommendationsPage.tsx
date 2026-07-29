@@ -8,7 +8,7 @@ export function AiRecommendationsPage() {
         description="Act on AI-generated insights for hiring, team formation, and leadership."
       />
       <div className="rounded-2xl border border-dashed border-[#E5E7EB] bg-[#FAFBFC] p-8 text-sm text-[#6B7280]">
-        Build AI recommendations here — suggested pairings, role fits, and action items.
+       
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export function ProjectsPage() {
         description="Manage projects and align team personalities with project requirements."
       />
       <div className="rounded-2xl border border-dashed border-[#E5E7EB] bg-[#FAFBFC] p-8 text-sm text-[#6B7280]">
-        Build projects here — project cards, team assignments, and fit analysis.
+        
       </div>
     </div>
   );
