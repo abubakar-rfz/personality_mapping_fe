@@ -143,28 +143,28 @@ export const skillHeatmapData: SkillHeatmapRow[] = [
     scores: { Leadership: 85, Communication: 72, "Problem Solving": 91, Ownership: 88, Technical: 95, Learning: 78, Adaptability: 82 },
   },
   {
-    employee: "Sarah Khan",
-    initials: "SK",
+    employee: "Ahmed Sajid",
+    initials: "Ss",
     scores: { Leadership: 92, Communication: 95, "Problem Solving": 78, Ownership: 85, Technical: 70, Learning: 90, Adaptability: 93 },
   },
   {
-    employee: "Omar Ali",
-    initials: "OA",
+    employee: "Adnan Malik",
+    initials: "AM",
     scores: { Leadership: 68, Communication: 82, "Problem Solving": 88, Ownership: 75, Technical: 92, Learning: 85, Adaptability: 71 },
   },
   {
-    employee: "Fatima Noor",
-    initials: "FN",
+    employee: "Hamza Khan",
+    initials: "HK",
     scores: { Leadership: 78, Communication: 88, "Problem Solving": 82, Ownership: 91, Technical: 65, Learning: 92, Adaptability: 95 },
   },
   {
-    employee: "Bilal Raza",
-    initials: "BR",
+    employee: "Yasir Hassan",
+    initials: "YH",
     scores: { Leadership: 55, Communication: 68, "Problem Solving": 75, Ownership: 62, Technical: 88, Learning: 72, Adaptability: 60 },
   },
   {
-    employee: "Ayesha Tariq",
-    initials: "AT",
+    employee: "Abu Bakar Amin",
+    initials: "AM",
     scores: { Leadership: 90, Communication: 92, "Problem Solving": 85, Ownership: 88, Technical: 72, Learning: 95, Adaptability: 88 },
   },
 ];
@@ -173,25 +173,25 @@ export const skillHeatmapData: SkillHeatmapRow[] = [
 
 export const personalityMatches: PersonalityMatch[] = [
   { name: "Ahmed", initials: "AH", matchPercentage: 95, bestMatchTeam: "Backend Team", recommendedClient: "Microsoft" },
-  { name: "Sarah", initials: "SK", matchPercentage: 92, bestMatchTeam: "UX Team", recommendedClient: "Healthcare Project" },
-  { name: "Omar", initials: "OA", matchPercentage: 89, bestMatchTeam: "DevOps Team", recommendedClient: "FinTech Startup" },
-  { name: "Fatima", initials: "FN", matchPercentage: 94, bestMatchTeam: "Data Science", recommendedClient: "Government Portal" },
+  { name: "Yasir", initials: "YH", matchPercentage: 92, bestMatchTeam: "UX Team", recommendedClient: "Healthcare Project" },
+  { name: "Hamza", initials: "HK", matchPercentage: 89, bestMatchTeam: "DevOps Team", recommendedClient: "FinTech Startup" },
+  { name: "Adnan", initials: "AM", matchPercentage: 94, bestMatchTeam: "Data Science", recommendedClient: "Government Portal" },
 ];
 
 // ─── Section 8: Employees Needing Attention ──────────────────────────────────
 
 export const employeesNeedingAttention: EmployeeAttention[] = [
   { name: "Ahmed", initials: "AH", issue: "High Burnout Risk", severity: "high" },
-  { name: "Sarah", initials: "SK", issue: "Assessment Pending", severity: "medium" },
-  { name: "Ali", initials: "AL", issue: "Low Collaboration Score", severity: "low" },
+  { name: "Yasir", initials: "YH", issue: "Assessment Pending", severity: "medium" },
+  { name: "Adnan", initials: "AM", issue: "Low Collaboration Score", severity: "low" },
 ];
 
 // ─── Section 9: AI Recommendations ──────────────────────────────────────────
 
 export const aiRecommendations: AiRecommendation[] = [
-  { title: "Promote Sarah to Team Lead", confidence: 96, icon: TrendingUp },
+  { title: "Promote Yasir to Team Lead", confidence: 96, icon: TrendingUp },
   { title: "Assign Ahmed to Project Phoenix", confidence: 94, icon: ArrowRightLeft },
-  { title: "Move Ali to Client ABC", confidence: 91, icon: UserPlus },
+  { title: "Move Adnan to Client ABC", confidence: 91, icon: UserPlus },
 ];
 
 // ─── Section 10: Recent Assessments ──────────────────────────────────────────
