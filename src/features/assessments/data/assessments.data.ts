@@ -859,8 +859,8 @@ export const mockAssessmentHistory: AssessmentHistoryItem[] = [
   },
   {
     id: "ast_102",
-    employeeName: "Sarah Khan",
-    employeeInitials: "SK",
+    employeeName: "Hamza Khan",
+    employeeInitials: "HK",
     employeeRole: "Lead Product Designer",
     department: "Design",
     status: "Completed",
@@ -870,8 +870,8 @@ export const mockAssessmentHistory: AssessmentHistoryItem[] = [
   },
   {
     id: "ast_103",
-    employeeName: "Omar Ali",
-    employeeInitials: "OA",
+    employeeName: "Adnan Malik",
+    employeeInitials: "AM",
     employeeRole: "DevOps Specialist",
     department: "Infrastructure",
     status: "In Progress",
@@ -881,8 +881,8 @@ export const mockAssessmentHistory: AssessmentHistoryItem[] = [
   },
   {
     id: "ast_104",
-    employeeName: "Fatima Noor",
-    employeeInitials: "FN",
+    employeeName: "Yasir Hassan",
+    employeeInitials: "YH",
     employeeRole: "Data Scientist",
     department: "AI & Analytics",
     status: "Completed",
@@ -903,7 +903,7 @@ export const mockAssessmentHistory: AssessmentHistoryItem[] = [
   },
   {
     id: "ast_106",
-    employeeName: "Ayesha Tariq",
+    employeeName: "Tamoor Hayat",
     employeeInitials: "AT",
     employeeRole: "Engineering Manager",
     department: "Management",

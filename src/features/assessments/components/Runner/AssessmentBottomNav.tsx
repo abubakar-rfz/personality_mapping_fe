@@ -22,7 +22,7 @@ export function AssessmentBottomNav({
   onFinish,
 }: AssessmentBottomNavProps) {
   return (
-    <div className="sticky bottom-0 z-30 border-t border-gray-100 bg-white/95 backdrop-blur-md">
+    <div className="sticky bottom-0 z-30 border-t border-gray-100 dark:border-zinc-800 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
         <Button
           variant="ghost"

@@ -28,8 +28,8 @@ export function SingleChoiceCards({
             onClick={() => onSelect(option.id)}
             className={`group relative flex flex-col justify-between rounded-2xl border p-5 text-left transition-all duration-200 ${
               isSelected
-                ? "border-[#034350] bg-[#034350]/[0.03] shadow-md ring-1 ring-[#034350]"
-                : "border-gray-100 bg-white hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-sm"
+                ? "border-[#034350] bg-[#034350]/[0.03] dark:bg-[#4da8b5]/[0.05] shadow-md ring-1 ring-[#034350]"
+                : "border-gray-100 dark:border-zinc-800 bg-white dark:bg-[#121212] hover:-translate-y-0.5 hover:border-gray-300 dark:border-zinc-700 hover:shadow-sm"
             }`}
           >
             <div className="flex items-start justify-between gap-3">
@@ -39,13 +39,13 @@ export function SingleChoiceCards({
                     className={`flex size-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                       isSelected
                         ? "bg-[#034350] text-white"
-                        : "bg-gray-100 text-gray-700 group-hover:bg-[#034350]/10 group-hover:text-[#034350]"
+                        : "bg-gray-100 dark:bg-zinc-900 text-gray-700 dark:text-zinc-300 group-hover:bg-[#034350]/10 group-hover:text-[#034350] dark:text-[#4da8b5]"
                     }`}
                   >
                     <Icon className="size-5" />
                   </div>
                 )}
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
                   {option.label}
                 </h4>
               </div>
@@ -54,7 +54,7 @@ export function SingleChoiceCards({
                 className={`flex size-5 shrink-0 items-center justify-center rounded-full border transition-all ${
                   isSelected
                     ? "border-[#034350] bg-[#034350] text-white"
-                    : "border-gray-300 bg-white"
+                    : "border-gray-300 dark:border-zinc-700 bg-white dark:bg-[#121212]"
                 }`}
               >
                 {isSelected && <Check className="size-3 stroke-[3]" />}
@@ -62,7 +62,7 @@ export function SingleChoiceCards({
             </div>
 
             {option.description && (
-              <p className="mt-3 text-xs leading-relaxed text-gray-500">
+              <p className="mt-3 text-xs leading-relaxed text-gray-500 dark:text-zinc-400">
                 {option.description}
               </p>
             )}

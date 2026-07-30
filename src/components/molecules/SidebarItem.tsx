@@ -12,16 +12,16 @@ import { cn } from "@/lib/utils";
 import type { SidebarNavItem } from "@/config/sidebar";
 
 const sidebarItemVariants = cva(
-  "group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#034350]/25 focus-visible:ring-offset-2",
+  "group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#034350]/25 focus-visible:ring-offset-2",
   {
     variants: {
       active: {
-        true: "bg-[#034350]/[0.08] text-[#034350] shadow-sm",
+        true: "bg-[#034350]/[0.06] text-[#034350] dark:bg-zinc-800 dark:text-white",
         false:
-          "text-[#6B7280] hover:translate-x-0.5 hover:bg-[#F4F6F8] hover:text-[#111827]",
+          "text-gray-500 hover:bg-gray-100/80 hover:text-gray-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white",
       },
       collapsed: {
-        true: "justify-center px-2.5",
+        true: "justify-center px-2 py-2.5",
         false: "",
       },
     },
@@ -58,27 +58,19 @@ export function SidebarItem({
         collapsed && "w-full",
       )}
     >
-      <span
-        aria-hidden="true"
-        className={cn(
-          "absolute top-1/2 left-0 h-6 w-1 -translate-y-1/2 rounded-r-full bg-[#034350] transition-all duration-300",
-          isActive ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0",
-        )}
-      />
-
       <Icon
         aria-hidden="true"
         className={cn(
           "size-[18px] shrink-0 transition-colors duration-200",
           isActive
-            ? "text-[#034350]"
-            : "text-[#6B7280] group-hover:text-[#111827]",
+            ? "text-[#034350] dark:text-white"
+            : "text-gray-400 group-hover:text-gray-600 dark:text-zinc-500 dark:group-hover:text-white",
         )}
-        strokeWidth={isActive ? 2.25 : 2}
+        strokeWidth={isActive ? 2 : 1.75}
       />
 
       {!collapsed && (
-        <span className="truncate tracking-[-0.01em]">{item.label}</span>
+        <span className="truncate tracking-tight">{item.label}</span>
       )}
     </Link>
   );
@@ -87,7 +79,9 @@ export function SidebarItem({
     return (
       <Tooltip>
         <TooltipTrigger asChild>{content}</TooltipTrigger>
-        <TooltipContent side="right">{item.label}</TooltipContent>
+        <TooltipContent side="right" className="text-xs">
+          {item.label}
+        </TooltipContent>
       </Tooltip>
     );
   }

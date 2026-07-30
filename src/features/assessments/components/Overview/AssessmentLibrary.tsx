@@ -23,14 +23,14 @@ export function AssessmentLibrary({ onStartSection }: AssessmentLibraryProps) {
           );
 
           let statusBadgeText = "Not Started";
-          let statusBadgeClass = "bg-gray-100 text-gray-600 border-gray-200";
+          let statusBadgeClass = "bg-gray-100 dark:bg-zinc-900 text-gray-600 dark:text-zinc-400 border-gray-200 dark:border-zinc-800";
 
           if (section.status === "completed") {
             statusBadgeText = "Completed";
             statusBadgeClass = "bg-emerald-50 text-emerald-700 border-emerald-200";
           } else if (section.status === "in_progress") {
             statusBadgeText = "In Progress";
-            statusBadgeClass = "bg-[#034350]/10 text-[#034350] border-[#034350]/20";
+            statusBadgeClass = "bg-[#034350]/10 text-[#034350] dark:text-[#4da8b5] border-[#034350]/20";
           }
 
           return (
@@ -41,7 +41,7 @@ export function AssessmentLibrary({ onStartSection }: AssessmentLibraryProps) {
               <CardContent className="flex flex-1 flex-col justify-between space-y-5 p-6">
                 <div className="space-y-4">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#034350]/5 text-[#034350] transition-colors group-hover:bg-[#034350] group-hover:text-white">
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#034350]/5 dark:bg-[#4da8b5]/10 text-[#034350] dark:text-[#4da8b5] transition-colors group-hover:bg-[#034350] group-hover:text-white">
                       <Icon className="size-5" />
                     </div>
                     <span
@@ -56,30 +56,30 @@ export function AssessmentLibrary({ onStartSection }: AssessmentLibraryProps) {
 
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-bold text-gray-400">
+                      <span className="text-[11px] font-bold text-gray-400 dark:text-zinc-500">
                         0{section.id}
                       </span>
-                      <h3 className="text-base font-semibold tracking-tight text-gray-900">
+                      <h3 className="text-base font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
                         {section.name}
                       </h3>
                     </div>
-                    <p className="text-xs leading-relaxed text-gray-500 line-clamp-2">
+                    <p className="text-xs leading-relaxed text-gray-500 dark:text-zinc-400 line-clamp-2">
                       {section.description}
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-4 pt-2">
-                  <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-100 pt-3">
+                  <div className="flex items-center justify-between text-xs text-gray-500 dark:text-zinc-400 border-t border-gray-100 dark:border-zinc-800 pt-3">
                     <span>{section.questionCount} Questions</span>
                     <span className="font-medium">~{section.estimatedMinutes} mins</span>
                   </div>
 
                   {section.status === "in_progress" && (
                     <div className="space-y-1.5">
-                      <div className="flex justify-between text-[11px] font-medium text-gray-500">
+                      <div className="flex justify-between text-[11px] font-medium text-gray-500 dark:text-zinc-400">
                         <span>Module Progress</span>
-                        <span className="font-semibold text-[#034350]">
+                        <span className="font-semibold text-[#034350] dark:text-[#4da8b5]">
                           {progressPercent}%
                         </span>
                       </div>

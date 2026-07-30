@@ -25,32 +25,32 @@ export function AssessmentSidebar({
   return (
     <div className="space-y-4 lg:sticky lg:top-6">
       {/* Overall Progress Card */}
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-gray-100 dark:border-zinc-800 shadow-sm">
         <CardContent className="space-y-4 p-5">
           <div className="flex items-center justify-between">
-            <h3 className="text-xs font-semibold text-gray-900">
+            <h3 className="text-xs font-semibold text-gray-900 dark:text-zinc-100">
               Assessment Progress
             </h3>
-            <span className="text-xs font-bold text-[#034350]">
+            <span className="text-xs font-bold text-[#034350] dark:text-[#4da8b5]">
               {overallProgress}%
             </span>
           </div>
 
           <Progress value={overallProgress} />
 
-          <div className="flex items-center justify-between text-[11px] text-gray-500">
+          <div className="flex items-center justify-between text-[11px] text-gray-500 dark:text-zinc-400">
             <span>{answeredCount} of {totalQuestions} Answered</span>
             <span>{questionsRemaining} Remaining</span>
           </div>
 
-          <div className="rounded-xl bg-[#034350]/[0.03] p-3">
+          <div className="rounded-xl bg-[#034350]/[0.03] dark:bg-[#4da8b5]/[0.05] p-3">
             <div className="flex items-center gap-2">
-              <Sparkles className="size-3.5 text-[#034350]" />
-              <span className="text-[11px] font-semibold text-[#034350]">
+              <Sparkles className="size-3.5 text-[#034350] dark:text-[#4da8b5]" />
+              <span className="text-[11px] font-semibold text-[#034350] dark:text-[#4da8b5]">
                 Live AI Trait Mapping Active
               </span>
             </div>
-            <p className="mt-1 text-[10px] text-gray-500">
+            <p className="mt-1 text-[10px] text-gray-500 dark:text-zinc-400">
               Real-time neural model processing work style & behavioral vectors.
             </p>
           </div>
@@ -58,9 +58,9 @@ export function AssessmentSidebar({
       </Card>
 
       {/* Sections Status Checklist */}
-      <Card className="border-gray-100 shadow-sm">
+      <Card className="border-gray-100 dark:border-zinc-800 shadow-sm">
         <CardContent className="space-y-3 p-5">
-          <h3 className="text-xs font-semibold text-gray-900">
+          <h3 className="text-xs font-semibold text-gray-900 dark:text-zinc-100">
             Sections Breakdown
           </h3>
 
@@ -74,10 +74,10 @@ export function AssessmentSidebar({
                   key={sec.id}
                   className={`flex items-center justify-between rounded-xl px-3 py-2 text-xs transition-colors ${
                     isCurrent
-                      ? "bg-[#034350]/10 font-semibold text-[#034350]"
+                      ? "bg-[#034350]/10 font-semibold text-[#034350] dark:text-[#4da8b5]"
                       : isDone
-                      ? "text-gray-700"
-                      : "text-gray-400"
+                      ? "text-gray-700 dark:text-zinc-300"
+                      : "text-gray-400 dark:text-zinc-500"
                   }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
@@ -96,8 +96,8 @@ export function AssessmentSidebar({
             })}
           </div>
 
-          <div className="mt-4 rounded-xl bg-gray-50 p-3 text-center">
-            <p className="text-[11px] font-medium text-gray-600">
+          <div className="mt-4 rounded-xl bg-gray-50 dark:bg-zinc-900/50 p-3 text-center">
+            <p className="text-[11px] font-medium text-gray-600 dark:text-zinc-400">
               "You're doing great! {questionsRemaining} questions remaining."
             </p>
           </div>

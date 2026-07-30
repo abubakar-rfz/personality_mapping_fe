@@ -29,7 +29,7 @@ function SheetTitle({
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={cn("text-base font-semibold text-[#111827]", className)}
+      className={cn("text-base font-semibold text-[#111827] dark:text-zinc-100", className)}
       {...props}
     />
   );
@@ -42,7 +42,7 @@ function SheetDescription({
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn("text-sm text-[#6B7280]", className)}
+      className={cn("text-sm text-[#6B7280] dark:text-zinc-400", className)}
       {...props}
     />
   );
@@ -88,14 +88,14 @@ function SheetContent({
         className={cn(
           "fixed z-50 flex flex-col gap-0 bg-[#FCFCFC] shadow-2xl transition ease-in-out data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:duration-300 data-[state=open]:duration-300",
           side === "left" &&
-            "inset-y-0 left-0 h-full w-[min(100vw-2rem,20rem)] border-r border-[#E5E7EB]/50 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left",
+            "inset-y-0 left-0 h-full w-[min(100vw-2rem,20rem)] border-r border-[#E5E7EB] dark:border-zinc-800/50 data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left",
           className,
         )}
         {...props}
       >
         {children}
         {showClose && (
-          <SheetPrimitive.Close className="absolute top-4 right-4 rounded-md p-1.5 text-[#6B7280] opacity-80 transition-opacity hover:bg-[#F4F6F8] hover:opacity-100 focus-visible:ring-2 focus-visible:ring-[#034350]/30 focus-visible:outline-none">
+          <SheetPrimitive.Close className="absolute top-4 right-4 rounded-md p-1.5 text-[#6B7280] dark:text-zinc-400 opacity-80 transition-opacity hover:bg-[#F4F6F8] dark:hover:bg-zinc-800 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-[#034350]/30 focus-visible:outline-none">
             <XIcon className="size-4" />
             <span className="sr-only">Close sidebar</span>
           </SheetPrimitive.Close>

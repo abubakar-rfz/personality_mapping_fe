@@ -103,29 +103,29 @@ export function ActiveAssessmentRunner({
   );
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F8FAFC]">
+    <div className="flex min-h-screen flex-col bg-[#F8FAFC] dark:bg-[#0a0a0a]">
       {/* Top Header Bar */}
-      <header className="sticky top-0 z-20 border-b border-gray-100 bg-white/90 backdrop-blur-md">
+      <header className="sticky top-0 z-20 border-b border-gray-100 dark:border-zinc-800 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="icon-sm" onClick={onExit}>
-              <X className="size-4 text-gray-500" />
+              <X className="size-4 text-gray-500 dark:text-zinc-400" />
             </Button>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-[#034350]">
+                <span className="text-xs font-semibold text-[#034350] dark:text-[#4da8b5]">
                   Module 0{currentSectionId}: {currentSection?.name}
                 </span>
               </div>
-              <p className="text-[11px] text-gray-400">
+              <p className="text-[11px] text-gray-400 dark:text-zinc-500">
                 Question {currentQuestionIndex + 1} of {sectionQuestions.length}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
-              <Clock className="size-3.5 text-gray-400" />
+            <div className="hidden sm:flex items-center gap-2 rounded-full bg-gray-100 dark:bg-zinc-900 px-3 py-1 text-xs text-gray-600 dark:text-zinc-400">
+              <Clock className="size-3.5 text-gray-400 dark:text-zinc-500" />
               <span>~3 mins remaining</span>
             </div>
             <Button variant="ghost" size="sm" onClick={onExit} className="text-xs">
@@ -135,7 +135,7 @@ export function ActiveAssessmentRunner({
         </div>
 
         {/* Top Progress Bar */}
-        <Progress value={sectionProgressPercent} className="h-1 rounded-none bg-gray-100" />
+        <Progress value={sectionProgressPercent} className="h-1 rounded-none bg-gray-100 dark:bg-zinc-900" />
       </header>
 
       {/* Main Grid Content */}
@@ -143,22 +143,22 @@ export function ActiveAssessmentRunner({
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_320px]">
           {/* Left: Main Question Experience */}
           <main className="space-y-6">
-            <Card className="border-gray-100 shadow-xl transition-all">
+            <Card className="border-gray-100 dark:border-zinc-800 shadow-xl transition-all">
               <CardContent className="space-y-8 p-6 sm:p-10 md:p-12">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#034350]/5 px-3 py-1 text-xs font-semibold text-[#034350]">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#034350]/5 dark:bg-[#4da8b5]/10 px-3 py-1 text-xs font-semibold text-[#034350] dark:text-[#4da8b5]">
                       <Sparkles className="size-3.5" />
                       Section 0{currentSectionId} of 10
                     </span>
                   </div>
 
-                  <h1 className="text-xl font-bold leading-relaxed tracking-tight text-gray-900 sm:text-2xl lg:text-3xl">
+                  <h1 className="text-xl font-bold leading-relaxed tracking-tight text-gray-900 dark:text-zinc-100 sm:text-2xl lg:text-3xl">
                     {currentQuestion.title}
                   </h1>
 
                   {currentQuestion.subtitle && (
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">
                       {currentQuestion.subtitle}
                     </p>
                   )}

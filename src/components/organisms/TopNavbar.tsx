@@ -20,6 +20,7 @@ import { SidebarMobileTrigger } from "@/components/organisms/Sidebar";
 import { Avatar, AvatarFallback } from "@/components/atoms/avatar";
 import { Badge } from "@/components/atoms/badge";
 import { Button } from "@/components/atoms/button";
+import { ThemeToggle } from "@/components/atoms/theme-toggle";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -51,7 +52,7 @@ function BrandMarkCompact() {
           {SIDEBAR_BRAND.logoInitial}
         </span>
       </div>
-      <span className="truncate text-sm font-semibold tracking-[-0.02em] text-[#111827]">
+      <span className="truncate text-sm font-semibold tracking-[-0.02em] text-[#111827] dark:text-zinc-100 dark:text-white">
         {SIDEBAR_BRAND.title}
       </span>
     </div>
@@ -87,14 +88,14 @@ function NavbarBreadcrumbs() {
 
   return (
     <nav aria-label="Breadcrumb" className="hidden min-w-0 items-center gap-2 md:flex">
-      <span className="truncate text-sm text-[#6B7280]">
+      <span className="truncate text-sm text-[#6B7280] dark:text-zinc-400 dark:text-zinc-400">
         {SIDEBAR_WORKSPACE.name}
       </span>
       <ChevronRight
         aria-hidden="true"
-        className="size-3.5 shrink-0 text-[#D1D5DB]"
+        className="size-3.5 shrink-0 text-[#D1D5DB] dark:text-zinc-600"
       />
-      <span className="truncate text-sm font-semibold text-[#111827]">
+      <span className="truncate text-sm font-semibold text-[#111827] dark:text-zinc-100 dark:text-zinc-100">
         {currentPage}
       </span>
     </nav>
@@ -106,16 +107,16 @@ function NavbarSearch() {
     <div className="relative hidden min-w-0 flex-1 md:block md:max-w-[18rem] lg:max-w-xl">
       <Search
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF]"
+        className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF] dark:text-zinc-500"
       />
       <Input
         id={SEARCH_INPUT_ID}
         type="search"
         placeholder="Search employees, projects..."
         aria-label="Search employees, projects"
-        className="h-11 w-full rounded-full border-[#E5E7EB] bg-[#F9FAFB] pr-24 pl-11 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20 lg:pr-28"
+        className="h-11 w-full rounded-full border-[#E5E7EB] dark:border-zinc-800 bg-[#F9FAFB] dark:bg-[#0a0a0a] pr-24 pl-11 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500 lg:pr-28"
       />
-      <kbd className="pointer-events-none absolute top-1/2 right-3 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-[#E5E7EB] bg-white px-2 py-0.5 text-[10px] font-medium text-[#9CA3AF] lg:inline-flex">
+      <kbd className="pointer-events-none absolute top-1/2 right-3 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-[#E5E7EB] dark:border-zinc-800 bg-white dark:bg-[#121212] px-2 py-0.5 text-[10px] font-medium text-[#9CA3AF] dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-500 lg:inline-flex">
         Ctrl K
       </kbd>
     </div>
@@ -128,14 +129,14 @@ function NavbarMobileSearch() {
       <div className="relative min-w-0 flex-1">
         <Search
           aria-hidden="true"
-          className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF]"
+          className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#9CA3AF] dark:text-zinc-500"
         />
         <Input
           id={SEARCH_INPUT_ID}
           type="search"
           placeholder="Search employees, projects..."
           aria-label="Search employees, projects"
-          className="h-11 w-full rounded-full border-[#E5E7EB] bg-[#F9FAFB] pl-11 pr-3 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20"
+          className="h-11 w-full rounded-full border-[#E5E7EB] dark:border-zinc-800 bg-[#F9FAFB] dark:bg-[#0a0a0a] pl-11 pr-3 text-sm shadow-[0_1px_2px_rgba(17,24,39,0.04)] focus-visible:border-[#034350]/30 focus-visible:ring-[#034350]/20 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
         />
       </div>
 
@@ -159,10 +160,10 @@ function NavbarActions() {
         variant="ghost"
         size="icon"
         aria-label="Notifications"
-        className="relative inline-flex size-10 rounded-full text-[#6B7280] hover:bg-[#F4F6F8] hover:text-[#111827] md:hidden"
+        className="relative inline-flex size-10 rounded-full text-[#6B7280] dark:text-zinc-400 hover:bg-[#F4F6F8] hover:text-[#111827] dark:text-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 md:hidden"
       >
         <Bell className="size-5" />
-        <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px]">
+        <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px] dark:border-zinc-900">
           3
         </Badge>
       </Button>
@@ -172,32 +173,24 @@ function NavbarActions() {
         variant="ghost"
         size="icon"
         aria-label="Notifications"
-        className="relative hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
+        className="relative hidden text-[#6B7280] dark:text-zinc-400 hover:scale-105 hover:text-[#111827] dark:text-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-100 md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <Bell className="size-5" />
-        <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px]">
+        <Badge className="absolute -top-0.5 -right-0.5 size-4 border-2 border-white p-0 text-[9px] dark:border-zinc-900">
           3
         </Badge>
       </Button>
+
+      <ThemeToggle />
 
       <Button
         type="button"
         variant="ghost"
         size="icon"
         aria-label="Messages"
-        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
+        className="hidden text-[#6B7280] dark:text-zinc-400 hover:scale-105 hover:text-[#111827] dark:text-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-100 md:inline-flex md:h-8 md:w-8 lg:h-9 lg:w-9"
       >
         <MessageSquare className="size-5" />
-      </Button>
-
-      <Button
-        type="button"
-        variant="ghost"
-        size="icon"
-        aria-label="Toggle theme"
-        className="hidden text-[#6B7280] hover:scale-105 hover:text-[#111827] lg:inline-flex lg:h-9 lg:w-9"
-      >
-        <Sun className="size-5" />
       </Button>
 
       <Button
@@ -231,10 +224,10 @@ function ProfileMenu() {
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col gap-0.5">
-            <span className="text-sm font-semibold text-[#111827]">
+            <span className="text-sm font-semibold text-[#111827] dark:text-zinc-100">
               {SIDEBAR_USER.name}
             </span>
-            <span className="text-xs text-[#6B7280]">{SIDEBAR_USER.role}</span>
+            <span className="text-xs text-[#6B7280] dark:text-zinc-400">{SIDEBAR_USER.role}</span>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
@@ -289,10 +282,10 @@ export function TopNavbar() {
     <>
       <SearchCommand inputId={SEARCH_INPUT_ID} />
 
-      <header className="sticky top-0 z-30 shrink-0 bg-[#F8FAFC] px-4 pt-4 pb-2 md:px-5 lg:px-6">
+      <header className="sticky top-0 z-30 shrink-0 bg-[#F8FAFC] dark:bg-[#0a0a0a] px-4 pt-4 pb-2 md:px-5 lg:px-6">
         <div
           className={cn(
-            "rounded-2xl border border-[#F1F5F9] bg-white px-3 py-3 transition-shadow duration-300 md:px-5 md:py-3",
+            "rounded-2xl border border-[#F1F5F9] dark:border-zinc-800 bg-white dark:bg-[#121212] px-3 py-3 transition-shadow duration-300 md:px-5 md:py-3 dark:bg-[#121212]/95 dark:border-zinc-800",
             scrolled
               ? "shadow-[0_4px_20px_rgba(17,24,39,0.08)]"
               : "shadow-[0_1px_3px_rgba(17,24,39,0.06)]",

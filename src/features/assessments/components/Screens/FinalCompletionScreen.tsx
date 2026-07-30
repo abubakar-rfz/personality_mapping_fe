@@ -50,17 +50,17 @@ export function FinalCompletionScreen({
               <Sparkles className="size-3.5" />
               Assessment Completed
             </span>
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-3xl">
               Behavioral Profile Generated
             </h1>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-zinc-400">
               Your responses have been processed through Personality Mapping AI models.
             </p>
           </div>
 
           {/* Report checklist */}
-          <div className="space-y-2.5 rounded-2xl bg-gray-50 p-5 text-left">
-            <p className="text-xs font-semibold text-gray-900">
+          <div className="space-y-2.5 rounded-2xl bg-gray-50 dark:bg-zinc-900/50 p-5 text-left">
+            <p className="text-xs font-semibold text-gray-900 dark:text-zinc-100">
               Generating Workforce Intelligence Reports:
             </p>
             {REPORT_STEPS.map((step, idx) => {
@@ -71,7 +71,7 @@ export function FinalCompletionScreen({
                   key={step}
                   className="flex items-center justify-between text-xs transition-opacity duration-300"
                 >
-                  <span className={isDone ? "font-medium text-gray-800" : "text-gray-400"}>
+                  <span className={isDone ? "font-medium text-gray-800 dark:text-zinc-200" : "text-gray-400 dark:text-zinc-500"}>
                     {step}
                   </span>
 
@@ -81,7 +81,7 @@ export function FinalCompletionScreen({
                       Generated
                     </span>
                   ) : (
-                    <span className="text-[11px] text-gray-400 animate-pulse">
+                    <span className="text-[11px] text-gray-400 dark:text-zinc-500 animate-pulse">
                       Analyzing...
                     </span>
                   )}

@@ -24,13 +24,13 @@ function getScoreColor(score: number): string {
 
 function getScoreTextColor(score: number): string {
   if (score >= 60) return "text-white";
-  return "text-gray-600";
+  return "text-gray-600 dark:text-zinc-400";
 }
 
 export function SkillHeatmap() {
   return (
     <section className="space-y-4">
-      <h2 className="text-sm font-semibold text-gray-900">Skill Heatmap</h2>
+      <h2 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">Skill Heatmap</h2>
       <Card>
         <CardContent className="p-6">
           <ScrollArea className="w-full">
@@ -41,7 +41,7 @@ export function SkillHeatmap() {
                 {SKILL_COLUMNS.map((skill) => (
                   <div
                     key={skill}
-                    className="px-1 text-center text-[10px] font-medium text-gray-500"
+                    className="px-1 text-center text-[10px] font-medium text-gray-500 dark:text-zinc-400"
                   >
                     {skill}
                   </div>
@@ -57,11 +57,11 @@ export function SkillHeatmap() {
                   >
                     <div className="flex items-center gap-2">
                       <Avatar className="size-6">
-                        <AvatarFallback className="bg-gray-100 text-[10px] font-medium text-gray-600">
+                        <AvatarFallback className="bg-gray-100 dark:bg-zinc-900 text-[10px] font-medium text-gray-600 dark:text-zinc-400">
                           {row.initials}
                         </AvatarFallback>
                       </Avatar>
-                      <span className="truncate text-xs font-medium text-gray-700">
+                      <span className="truncate text-xs font-medium text-gray-700 dark:text-zinc-300">
                         {row.employee}
                       </span>
                     </div>

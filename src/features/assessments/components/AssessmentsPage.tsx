@@ -60,14 +60,14 @@ export function AssessmentsPage() {
 
       {/* View Mode Segmented Controls */}
       <div className="space-y-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-gray-100 pb-4">
-          <div className="inline-flex rounded-xl bg-gray-100 p-1">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-gray-100 dark:border-zinc-800 pb-4">
+          <div className="inline-flex rounded-xl bg-gray-100 dark:bg-zinc-900 p-1">
             <button
               onClick={() => setActiveTab("library")}
               className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
                 activeTab === "library"
-                  ? "bg-white text-[#034350] shadow-sm"
-                  : "text-gray-500 hover:text-gray-900"
+                  ? "bg-white dark:bg-[#121212] text-[#034350] dark:text-[#4da8b5] shadow-sm"
+                  : "text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:text-zinc-100"
               }`}
             >
               <BookOpen className="size-3.5" />
@@ -77,8 +77,8 @@ export function AssessmentsPage() {
               onClick={() => setActiveTab("history")}
               className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
                 activeTab === "history"
-                  ? "bg-white text-[#034350] shadow-sm"
-                  : "text-gray-500 hover:text-gray-900"
+                  ? "bg-white dark:bg-[#121212] text-[#034350] dark:text-[#4da8b5] shadow-sm"
+                  : "text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:text-zinc-100"
               }`}
             >
               <History className="size-3.5" />
@@ -86,7 +86,7 @@ export function AssessmentsPage() {
             </button>
           </div>
 
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-500 dark:text-zinc-400">
             {activeTab === "library"
               ? "Select any module to start or continue evaluation"
               : "Track and review completed employee assessments"}

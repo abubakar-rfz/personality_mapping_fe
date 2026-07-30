@@ -14,7 +14,7 @@ export function OrganizationHealth() {
 
   return (
     <section>
-      <h2 className="mb-4 text-sm font-semibold text-gray-900">
+      <h2 className="mb-4 text-sm font-semibold text-gray-900 dark:text-zinc-100">
         Organization Intelligence
       </h2>
       <Card>
@@ -22,7 +22,7 @@ export function OrganizationHealth() {
           <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
             {/* Circular Progress */}
             <div className="flex flex-col items-center gap-3">
-              <p className="text-xs font-medium text-gray-500">
+              <p className="text-xs font-medium text-gray-500 dark:text-zinc-400">
                 Organization Health
               </p>
               <div className="relative flex items-center justify-center">
@@ -54,10 +54,10 @@ export function OrganizationHealth() {
                   />
                 </svg>
                 <div className="absolute flex flex-col items-center">
-                  <span className="text-3xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold text-gray-900 dark:text-zinc-100">
                     {score}%
                   </span>
-                  <span className="text-[11px] text-gray-500">{status}</span>
+                  <span className="text-[11px] text-gray-500 dark:text-zinc-400">{status}</span>
                 </div>
               </div>
             </div>
@@ -67,10 +67,10 @@ export function OrganizationHealth() {
               {metrics.map((metric) => (
                 <div key={metric.label} className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-gray-600">
+                    <span className="text-xs font-medium text-gray-600 dark:text-zinc-400">
                       {metric.label}
                     </span>
-                    <span className="text-xs font-semibold text-gray-900">
+                    <span className="text-xs font-semibold text-gray-900 dark:text-zinc-100">
                       {metric.value}%
                     </span>
                   </div>
@@ -81,9 +81,9 @@ export function OrganizationHealth() {
           </div>
 
           {/* AI Summary */}
-          <div className="mt-6 flex items-center gap-2 rounded-2xl bg-gray-50 px-4 py-3">
-            <Sparkles className="size-3.5 shrink-0 text-[#034350]" />
-            <p className="text-xs text-gray-500">{aiSummary}</p>
+          <div className="mt-6 flex items-center gap-2 rounded-2xl bg-gray-50 dark:bg-zinc-900/50 px-4 py-3">
+            <Sparkles className="size-3.5 shrink-0 text-[#034350] dark:text-[#4da8b5]" />
+            <p className="text-xs text-gray-500 dark:text-zinc-400">{aiSummary}</p>
           </div>
         </CardContent>
       </Card>

@@ -21,34 +21,34 @@ export function SectionTransition({
       <Card className="w-full max-w-lg text-center transition-all duration-300 shadow-xl">
         <CardContent className="space-y-6 p-8 sm:p-10">
           <div className="mx-auto flex size-16 items-center justify-center rounded-2xl bg-[#034350]/10">
-            <CheckCircle2 className="size-8 text-[#034350]" />
+            <CheckCircle2 className="size-8 text-[#034350] dark:text-[#4da8b5]" />
           </div>
 
           <div className="space-y-2">
             <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
               Section Completed
             </span>
-            <h2 className="text-xl font-bold text-gray-900">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-zinc-100">
               {completedSectionName}
             </h2>
           </div>
 
-          <div className="rounded-2xl bg-[#034350]/[0.03] p-4 text-left space-y-2">
+          <div className="rounded-2xl bg-[#034350]/[0.03] dark:bg-[#4da8b5]/[0.05] p-4 text-left space-y-2">
             <div className="flex items-center gap-2">
-              <Sparkles className="size-4 text-[#034350]" />
-              <p className="text-xs font-semibold text-[#034350]">
+              <Sparkles className="size-4 text-[#034350] dark:text-[#4da8b5]" />
+              <p className="text-xs font-semibold text-[#034350] dark:text-[#4da8b5]">
                 AI Trait Analysis Update
               </p>
             </div>
-            <p className="text-xs leading-relaxed text-gray-600">
+            <p className="text-xs leading-relaxed text-gray-600 dark:text-zinc-400">
               AI model has processed responses for "{completedSectionName}" and updated behavioral alignment vectors.
             </p>
           </div>
 
           {nextSectionName ? (
             <div className="space-y-4 pt-2">
-              <p className="text-xs text-gray-500">
-                Up next: <span className="font-semibold text-gray-900">{nextSectionName}</span>
+              <p className="text-xs text-gray-500 dark:text-zinc-400">
+                Up next: <span className="font-semibold text-gray-900 dark:text-zinc-100">{nextSectionName}</span>
               </p>
               <Button onClick={onContinue} className="w-full justify-center">
                 Continue to {nextSectionName}

@@ -34,7 +34,7 @@ function DropdownMenuContent({
         data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
         className={cn(
-          "z-50 min-w-[12rem] overflow-hidden rounded-xl border border-[#E5E7EB]/80 bg-white p-1.5 text-[#111827] shadow-lg animate-in fade-in-0 zoom-in-95",
+          "z-50 min-w-[12rem] overflow-hidden rounded-xl border border-[#E5E7EB] dark:border-zinc-800 bg-white dark:bg-[#121212] p-1.5 text-[#111827] dark:text-zinc-100 shadow-lg animate-in fade-in-0 zoom-in-95",
           className,
         )}
         {...props}
@@ -54,7 +54,7 @@ function DropdownMenuItem({
     <DropdownMenuPrimitive.Item
       data-slot="dropdown-menu-item"
       className={cn(
-        "relative flex cursor-default select-none items-center gap-2 rounded-lg px-2.5 py-2 text-sm outline-none transition-colors focus:bg-[#F4F6F8] data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
+        "relative flex cursor-default select-none items-center gap-2 rounded-lg px-2.5 py-2 text-sm outline-none transition-colors focus:bg-[#F4F6F8] dark:focus:bg-zinc-800 dark:focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
         inset && "pl-8",
         className,
       )}
@@ -74,7 +74,7 @@ function DropdownMenuLabel({
     <DropdownMenuPrimitive.Label
       data-slot="dropdown-menu-label"
       className={cn(
-        "px-2.5 py-1.5 text-xs font-medium text-[#6B7280]",
+        "px-2.5 py-1.5 text-xs font-medium text-[#6B7280] dark:text-zinc-400",
         inset && "pl-8",
         className,
       )}
@@ -90,7 +90,7 @@ function DropdownMenuSeparator({
   return (
     <DropdownMenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      className={cn("my-1 h-px bg-[#E5E7EB]/80", className)}
+      className={cn("my-1 h-px bg-[#E5E7EB]/80 dark:bg-zinc-800", className)}
       {...props}
     />
   );
@@ -106,7 +106,7 @@ function DropdownMenuCheckboxItem({
     <DropdownMenuPrimitive.CheckboxItem
       data-slot="dropdown-menu-checkbox-item"
       className={cn(
-        "relative flex cursor-default select-none items-center rounded-lg py-2 pr-2 pl-8 text-sm outline-none transition-colors focus:bg-[#F4F6F8] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-lg py-2 pr-2 pl-8 text-sm outline-none transition-colors focus:bg-[#F4F6F8] dark:focus:bg-zinc-800 dark:focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className,
       )}
       checked={checked}
@@ -134,7 +134,7 @@ function DropdownMenuSubTrigger({
     <DropdownMenuPrimitive.SubTrigger
       data-slot="dropdown-menu-sub-trigger"
       className={cn(
-        "flex cursor-default select-none items-center gap-2 rounded-lg px-2.5 py-2 text-sm outline-none focus:bg-[#F4F6F8] data-[state=open]:bg-[#F4F6F8] [&_svg]:size-4",
+        "flex cursor-default select-none items-center gap-2 rounded-lg px-2.5 py-2 text-sm outline-none focus:bg-[#F4F6F8] dark:focus:bg-zinc-800 dark:focus:text-white data-[state=open]:bg-[#F4F6F8] dark:data-[state=open]:bg-zinc-800 [&_svg]:size-4",
         inset && "pl-8",
         className,
       )}

@@ -18,7 +18,7 @@ function RadialMetricCard({ metric }: { metric: RadialMetricData }) {
   return (
     <Card className="transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <CardContent className="flex flex-col items-center p-8">
-        <h3 className="text-sm font-semibold text-gray-900">{metric.label}</h3>
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">{metric.label}</h3>
 
         <div className="relative my-4">
           <ResponsiveContainer width={140} height={140}>
@@ -40,7 +40,7 @@ function RadialMetricCard({ metric }: { metric: RadialMetricData }) {
             </PieChart>
           </ResponsiveContainer>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-2xl font-bold text-gray-900 dark:text-zinc-100">
               {metric.value}%
             </span>
           </div>
@@ -55,7 +55,7 @@ function RadialMetricCard({ metric }: { metric: RadialMetricData }) {
         >
           {metric.status}
         </span>
-        <p className="mt-3 text-center text-xs text-gray-500">
+        <p className="mt-3 text-center text-xs text-gray-500 dark:text-zinc-400">
           {metric.description}
         </p>
       </CardContent>
@@ -66,7 +66,7 @@ function RadialMetricCard({ metric }: { metric: RadialMetricData }) {
 export function WorkforceHealth() {
   return (
     <section className="space-y-4">
-      <h2 className="text-sm font-semibold text-gray-900">Workforce Health</h2>
+      <h2 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">Workforce Health</h2>
       <div className="grid gap-6 md:grid-cols-2">
         <RadialMetricCard metric={burnoutRisk} />
         <RadialMetricCard metric={engagementScore} />

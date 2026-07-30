@@ -17,7 +17,7 @@ const SEVERITY_CONFIG: Record<
 export function EmployeesAttention() {
   return (
     <section className="space-y-4">
-      <h2 className="text-sm font-semibold text-gray-900">
+      <h2 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
         Employees Needing Attention
       </h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -31,13 +31,13 @@ export function EmployeesAttention() {
             >
               <CardContent className="flex items-center gap-4 p-5">
                 <Avatar className="size-10">
-                  <AvatarFallback className="bg-gray-100 text-xs font-medium text-gray-600">
+                  <AvatarFallback className="bg-gray-100 dark:bg-zinc-900 text-xs font-medium text-gray-600 dark:text-zinc-400">
                     {employee.initials}
                   </AvatarFallback>
                 </Avatar>
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-sm font-semibold text-gray-900">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
                     {employee.name}
                   </h3>
                   <div className="mt-1 flex items-center gap-1.5">

@@ -50,7 +50,7 @@ export const SIDEBAR_BRAND: SidebarBrand = {
 };
 
 export const SIDEBAR_WORKSPACE: SidebarWorkspace = {
-  name: "TamWork Execute",
+  name: "Apex Enterprises",
   subtitle: "Software House",
   initials: "TE",
 };
@@ -58,12 +58,12 @@ export const SIDEBAR_WORKSPACE: SidebarWorkspace = {
 export const SIDEBAR_WORKSPACE_OPTIONS: SidebarWorkspaceOption[] = [
   SIDEBAR_WORKSPACE,
   {
-    name: "TamWork Labs",
+    name: "Apex Research Labs",
     subtitle: "Research Division",
     initials: "TL",
   },
   {
-    name: "TamWork Global",
+    name: "Apex Global",
     subtitle: "Enterprise",
     initials: "TG",
   },

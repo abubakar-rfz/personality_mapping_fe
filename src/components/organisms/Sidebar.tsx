@@ -53,25 +53,22 @@ function BrandMark({ compact = false }: { compact?: boolean }) {
     <div
       className={cn(
         "flex items-center gap-3",
-        compact ? "justify-center" : "px-1",
+        compact ? "justify-center" : "px-2",
       )}
     >
       <div
         aria-hidden="true"
-        className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#5B8DEF] via-[#7C6CF6] to-[#A78BFA] shadow-[0_8px_24px_rgba(91,141,239,0.28)] ring-1 ring-white/60"
+        className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#111827] to-[#374151] dark:from-white dark:to-gray-300 shadow-sm ring-1 ring-black/10 dark:ring-zinc-800"
       >
-        <span className="text-sm font-bold text-white">
+        <span className="text-sm font-bold text-white dark:text-black">
           {SIDEBAR_BRAND.logoInitial}
         </span>
       </div>
 
       {!compact && (
         <div className="min-w-0">
-          <p className="truncate text-[15px] font-semibold tracking-[-0.02em] text-[#111827]">
+          <p className="truncate text-sm font-bold tracking-tight text-gray-900 dark:text-zinc-50">
             {SIDEBAR_BRAND.title}
-          </p>
-          <p className="truncate text-[10px] font-semibold tracking-[0.14em] text-[#6B7280] uppercase">
-            {SIDEBAR_BRAND.subtitle}
           </p>
         </div>
       )}
@@ -91,60 +88,60 @@ function WorkspaceSwitcher({
     SIDEBAR_WORKSPACE;
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          type="button"
-          aria-label="Switch workspace"
-          className={cn(
-            "flex w-full items-center gap-3 rounded-2xl border border-transparent bg-white p-3 text-left shadow-[0_1px_2px_rgba(17,24,39,0.04),0_8px_24px_rgba(17,24,39,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#E5E7EB]/80 hover:bg-[#F4F6F8] focus-visible:ring-2 focus-visible:ring-[#034350]/25 focus-visible:outline-none",
-            collapsed && "justify-center p-2.5",
-          )}
-        >
-          <Avatar className="size-9">
-            <AvatarFallback className="bg-[#034350] text-xs font-semibold">
-              {workspace.initials}
-            </AvatarFallback>
-          </Avatar>
-
-          {!collapsed && (
-            <>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-[#111827]">
-                  {workspace.name}
-                </span>
-                <span className="block truncate text-xs text-[#6B7280]">
-                  {workspace.subtitle}
-                </span>
-              </span>
-              <ChevronsUpDown
-                aria-hidden="true"
-                className="size-4 shrink-0 text-[#9CA3AF]"
-              />
-            </>
-          )}
-        </button>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent align="start" className="w-64">
-        <DropdownMenuLabel>Workspaces</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        {SIDEBAR_WORKSPACE_OPTIONS.map((option) => (
-          <DropdownMenuCheckboxItem
-            key={option.name}
-            checked={activeWorkspace === option.name}
-            onCheckedChange={() => setActiveWorkspace(option.name)}
+    <div className="px-2">
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button
+            type="button"
+            aria-label="Switch workspace"
+            className={cn(
+              "flex w-full items-center gap-2 rounded-lg border border-transparent p-1.5 text-left transition-all duration-200 hover:bg-gray-100/80 dark:hover:bg-zinc-800 focus-visible:ring-2 focus-visible:ring-[#034350]/25 focus-visible:outline-none",
+              collapsed && "justify-center",
+            )}
           >
-            <span className="flex min-w-0 flex-col">
-              <span className="truncate font-medium">{option.name}</span>
-              <span className="truncate text-xs text-[#6B7280]">
-                {option.subtitle}
+            <Avatar className="size-6 rounded-md">
+              <AvatarFallback className="rounded-md bg-[#034350]/10 text-[#034350] dark:bg-white/10 dark:text-white text-[10px] font-bold">
+                {workspace.initials}
+              </AvatarFallback>
+            </Avatar>
+
+            {!collapsed && (
+              <>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-medium text-gray-700 dark:text-zinc-300">
+                    {workspace.name}
+                  </span>
+                </span>
+                <ChevronsUpDown
+                  aria-hidden="true"
+                  className="size-3.5 shrink-0 text-gray-400 dark:text-zinc-500"
+                />
+              </>
+            )}
+          </button>
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent align="start" className="w-56 rounded-xl border-gray-200 dark:border-zinc-800 bg-white dark:bg-[#121212]">
+          <DropdownMenuLabel className="text-xs font-semibold text-gray-500 dark:text-zinc-400">Workspaces</DropdownMenuLabel>
+          <DropdownMenuSeparator className="bg-gray-100 dark:bg-white/10" />
+          {SIDEBAR_WORKSPACE_OPTIONS.map((option) => (
+            <DropdownMenuCheckboxItem
+              key={option.name}
+              checked={activeWorkspace === option.name}
+              onCheckedChange={() => setActiveWorkspace(option.name)}
+              className="rounded-lg text-sm dark:text-zinc-300 dark:focus:bg-zinc-800 dark:focus:text-white"
+            >
+              <span className="flex min-w-0 flex-col py-0.5">
+                <span className="truncate font-medium">{option.name}</span>
+                <span className="truncate text-[10px] text-gray-500 dark:text-zinc-500">
+                  {option.subtitle}
+                </span>
               </span>
-            </span>
-          </DropdownMenuCheckboxItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+            </DropdownMenuCheckboxItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 }
 
@@ -166,7 +163,12 @@ function SidebarNavigation({
   };
 
   return (
-    <nav aria-label="Main navigation" className="space-y-1 px-2">
+    <nav aria-label="Main navigation" className="space-y-0.5 px-3">
+      <div className="mb-2 px-3 pt-2">
+        <p className={cn("text-[10px] font-semibold tracking-wider text-gray-400 uppercase dark:text-zinc-600", collapsed && "sr-only")}>
+          Overview
+        </p>
+      </div>
       {SIDEBAR_NAV_ITEMS.map((item) => (
         <SidebarItem
           key={item.href}
@@ -187,16 +189,16 @@ function SidebarProfile({
 }) {
   return (
     <div className="px-3 pb-4 pt-2">
-      <Separator className="mb-4" />
+      <Separator className="mb-4 bg-gray-100 dark:bg-white/10" />
 
       <div
         className={cn(
-          "flex items-center gap-3 rounded-2xl px-2 py-2 transition-colors duration-200 hover:bg-[#F4F6F8]",
+          "flex items-center gap-3 rounded-xl px-2 py-2 transition-colors duration-200 hover:bg-gray-100/80 dark:hover:bg-zinc-800",
           collapsed && "justify-center px-0",
         )}
       >
-        <Avatar className="size-10">
-          <AvatarFallback className="bg-gradient-to-br from-[#5B8DEF] via-[#7C6CF6] to-[#A78BFA] text-xs font-semibold">
+        <Avatar className="size-8">
+          <AvatarFallback className="bg-gradient-to-br from-gray-800 to-black text-white dark:from-zinc-100 dark:to-zinc-300 dark:text-black text-xs font-bold">
             {SIDEBAR_USER.initials}
           </AvatarFallback>
         </Avatar>
@@ -204,10 +206,10 @@ function SidebarProfile({
         {!collapsed && (
           <>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-semibold text-[#111827]">
+              <p className="truncate text-sm font-medium text-gray-900 dark:text-zinc-100">
                 {SIDEBAR_USER.name}
               </p>
-              <p className="truncate text-xs text-[#6B7280]">
+              <p className="truncate text-xs text-gray-500 dark:text-zinc-500">
                 {SIDEBAR_USER.role}
               </p>
             </div>
@@ -216,7 +218,7 @@ function SidebarProfile({
               variant="ghost"
               size="icon-sm"
               asChild
-              className="shrink-0 text-[#6B7280] hover:text-[#111827]"
+              className="shrink-0 text-gray-400 hover:text-gray-900 dark:text-zinc-500 dark:hover:text-zinc-100"
             >
               <Link href="/settings" aria-label="Account settings">
                 <Settings className="size-4" />
@@ -239,13 +241,13 @@ function SidebarPanel({
   return (
     <aside
       className={cn(
-        "flex h-full flex-col bg-[#FCFCFC]",
+        "flex h-full flex-col bg-[#F8FAFC] dark:bg-[#000000]",
         className,
       )}
       aria-label="Application sidebar"
     >
-      <div className="space-y-5 px-4 pt-5 pb-4">
-        <div className="flex items-start justify-between gap-2">
+      <div className="space-y-4 px-3 pt-5 pb-2">
+        <div className="flex items-center justify-between gap-2 px-1">
           <BrandMark compact={collapsed} />
           {showCollapseControl && onToggleCollapse && (
             <Button
@@ -254,7 +256,7 @@ function SidebarPanel({
               size="icon-sm"
               onClick={onToggleCollapse}
               aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-              className="shrink-0 text-[#6B7280] hover:text-[#111827]"
+              className="shrink-0 text-gray-400 hover:text-gray-900 dark:text-zinc-500 dark:hover:text-zinc-100"
             >
               {collapsed ? (
                 <PanelLeftOpen className="size-4" />
@@ -268,7 +270,7 @@ function SidebarPanel({
         <WorkspaceSwitcher collapsed={collapsed} />
       </div>
 
-      <ScrollArea className="min-h-0 flex-1 px-2">
+      <ScrollArea className="min-h-0 flex-1">
         <SidebarNavigation collapsed={collapsed} onNavigate={onNavigate} />
       </ScrollArea>
 
@@ -297,13 +299,13 @@ export function SidebarMobileTrigger({
           variant="outline"
           size="icon"
           aria-label="Open navigation menu"
-          className={cn("md:hidden", className)}
+          className={cn("md:hidden dark:border-zinc-800 dark:text-white dark:bg-transparent", className)}
         >
-          <Menu className="size-5" />
+          <Menu className="size-4" />
         </Button>
       </SheetTrigger>
 
-      <SheetContent side="left" showClose className="p-0">
+      <SheetContent side="left" showClose className="p-0 border-r-0 dark:bg-[#000000]">
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
         <SidebarPanel onNavigate={() => setOpen(false)} />
       </SheetContent>
@@ -319,8 +321,8 @@ export function Sidebar() {
       <div className="hidden md:contents">
         <div
           className={cn(
-            "fixed inset-y-0 left-0 z-40 hidden border-r border-[#E5E7EB]/60 bg-[#FCFCFC] shadow-[4px_0_24px_rgba(17,24,39,0.04)] transition-[width] duration-300 ease-out md:flex",
-            collapsed ? "w-[5.25rem]" : "w-72",
+            "fixed inset-y-0 left-0 z-40 hidden border-r border-gray-200/50 bg-[#F8FAFC] dark:border-zinc-800 dark:bg-[#000000] transition-[width] duration-300 ease-in-out md:flex will-change-width overflow-hidden",
+            collapsed ? "w-[4.5rem]" : "w-64",
           )}
         >
           <SidebarPanel
@@ -334,8 +336,8 @@ export function Sidebar() {
         <div
           aria-hidden="true"
           className={cn(
-            "hidden shrink-0 transition-[width] duration-300 ease-out md:block",
-            collapsed ? "w-[5.25rem]" : "w-72",
+            "hidden shrink-0 transition-[width] duration-300 ease-in-out md:block will-change-width",
+            collapsed ? "w-[4.5rem]" : "w-64",
           )}
         />
       </div>

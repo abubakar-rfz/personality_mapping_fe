@@ -39,9 +39,9 @@ function ChartTooltip({
   const item = payload[0];
   const label = labelKey && item.payload ? (item.payload[labelKey] as string) : item.name;
   return (
-    <div className="rounded-xl border border-gray-100 bg-white px-3 py-2 shadow-lg">
-      <p className="text-xs font-medium text-gray-900">{label}</p>
-      <p className="text-xs text-gray-500">{item.value}%</p>
+    <div className="rounded-xl border border-gray-100 dark:border-zinc-800 bg-white dark:bg-[#121212] px-3 py-2 shadow-lg">
+      <p className="text-xs font-medium text-gray-900 dark:text-zinc-100">{label}</p>
+      <p className="text-xs text-gray-500 dark:text-zinc-400">{item.value}%</p>
     </div>
   );
 }
@@ -54,7 +54,7 @@ export function AnalyticsCards() {
       {/* Personality Distribution — Donut */}
       <Card className="flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
         <CardHeader className="px-5 pt-5 pb-2 sm:px-6 sm:pt-6">
-          <CardTitle className="text-sm font-semibold text-gray-900">
+          <CardTitle className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
             Personality Distribution
           </CardTitle>
         </CardHeader>
@@ -87,7 +87,7 @@ export function AnalyticsCards() {
                   className="size-2 shrink-0 rounded-full"
                   style={{ backgroundColor: cat.color }}
                 />
-                <span className="text-[11px] font-medium text-gray-500">
+                <span className="text-[11px] font-medium text-gray-500 dark:text-zinc-400">
                   {cat.name}
                 </span>
               </div>
@@ -99,7 +99,7 @@ export function AnalyticsCards() {
       {/* Work Style Breakdown — Bar */}
       <Card className="flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
         <CardHeader className="px-5 pt-5 pb-2 sm:px-6 sm:pt-6">
-          <CardTitle className="text-sm font-semibold text-gray-900">
+          <CardTitle className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
             Work Style Breakdown
           </CardTitle>
         </CardHeader>
@@ -142,18 +142,18 @@ export function AnalyticsCards() {
       <Card className="flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md md:col-span-2 lg:col-span-1">
         <CardHeader className="px-5 pt-5 pb-2 sm:px-6 sm:pt-6">
           <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
-            <CardTitle className="truncate text-sm font-semibold text-gray-900">
+            <CardTitle className="truncate text-sm font-semibold text-gray-900 dark:text-zinc-100">
               Compatibility Trend
             </CardTitle>
-            <div className="flex shrink-0 items-center rounded-lg bg-gray-100 p-0.5 self-start sm:self-auto">
+            <div className="flex shrink-0 items-center rounded-lg bg-gray-100 dark:bg-zinc-900 p-0.5 self-start sm:self-auto">
               {TREND_PERIODS.map((period) => (
                 <button
                   key={period}
                   onClick={() => setTrendPeriod(period)}
                   className={`rounded-md px-2.5 py-1 text-[10px] font-medium capitalize transition-all ${
                     trendPeriod === period
-                      ? "bg-white text-gray-900 shadow-sm"
-                      : "text-gray-500 hover:text-gray-700"
+                      ? "bg-white dark:bg-[#121212] text-gray-900 dark:text-zinc-100 shadow-sm"
+                      : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:text-zinc-300"
                   }`}
                 >
                   {period}

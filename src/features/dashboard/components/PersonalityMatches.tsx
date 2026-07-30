@@ -8,7 +8,7 @@ import { personalityMatches } from "@/features/dashboard/data/dashboard.data";
 export function PersonalityMatches() {
   return (
     <section className="space-y-4">
-      <h2 className="text-sm font-semibold text-gray-900">
+      <h2 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
         Personality Matches
       </h2>
       <div className="grid gap-4 md:grid-cols-2">
@@ -26,31 +26,31 @@ export function PersonalityMatches() {
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-semibold text-gray-900">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-zinc-100">
                     {match.name}
                   </h3>
-                  <Badge variant="secondary" className="text-[#034350]">
+                  <Badge variant="secondary" className="text-[#034350] dark:text-[#4da8b5]">
                     {match.matchPercentage}%
                   </Badge>
                 </div>
-                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-gray-500">
+                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-gray-500 dark:text-zinc-400">
                   <span>
                     Best Match{" "}
-                    <span className="font-medium text-gray-700">
+                    <span className="font-medium text-gray-700 dark:text-zinc-300">
                       {match.bestMatchTeam}
                     </span>
                   </span>
                   <span className="hidden sm:inline">·</span>
                   <span>
                     Client{" "}
-                    <span className="font-medium text-gray-700">
+                    <span className="font-medium text-gray-700 dark:text-zinc-300">
                       {match.recommendedClient}
                     </span>
                   </span>
                 </div>
               </div>
 
-              <ArrowRight className="size-4 shrink-0 text-gray-400" />
+              <ArrowRight className="size-4 shrink-0 text-gray-400 dark:text-zinc-500" />
             </CardContent>
           </Card>
         ))}
