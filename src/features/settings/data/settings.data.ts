@@ -101,7 +101,7 @@ export const initialDepartments: DepartmentSetting[] = [
       { id: "t1", name: "Backend Core", lead: "Ahmed Khan", memberCount: 8 },
       { id: "t2", name: "Frontend Guild", lead: "Hassan Raza", memberCount: 6 },
     ],
-    recentActivity: ["Ahmed Khan completed assessment", "Hassan Raza added to Frontend Guild", "Sprint 42 velocity report generated"],
+    recentActivity: ["Ahmed Sajid completed assessment", "Hassan Raza added to Frontend Guild", "Sprint 42 velocity report generated"],
   },
   {
     id: "dept_2", name: "Design", description: "Product design, UX research, and brand identity.", manager: "Yasir Hassan", head: "Yasir Hassan",
