@@ -93,12 +93,51 @@ export const settingsNavItems: SettingsNavItem[] = [
 // ─── Department Profiles ─────────────────────────────────────────────────────
 
 export const initialDepartments: DepartmentSetting[] = [
-  { id: "dept_1", name: "Engineering", employeeCount: 32, manager: "Ayesha Tariq" },
-  { id: "dept_2", name: "Design", employeeCount: 18, manager: "Sarah Mitchell" },
-  { id: "dept_3", name: "QA", employeeCount: 14, manager: "Bilal Raza" },
-  { id: "dept_4", name: "DevOps", employeeCount: 8, manager: "Omar Ali" },
-  { id: "dept_5", name: "HR", employeeCount: 12, manager: "Zainab Malik" },
-  { id: "dept_6", name: "Management", employeeCount: 6, manager: "Muhammad Abu Bakar" },
+  {
+    id: "dept_1", name: "Engineering", description: "Core product development and backend systems.", manager: "Tamoor Hayat", head: "Tamoor Hayat",
+    employeeCount: 32, teamCount: 4, status: "active", color: "#034350", createdDate: "Jan 2022",
+    assessmentCompletion: 91, avgCompatibility: 93, memberIds: ["emp_1", "emp_6", "emp_9"],
+    teams: [
+      { id: "t1", name: "Backend Core", lead: "Ahmed Khan", memberCount: 8 },
+      { id: "t2", name: "Frontend Guild", lead: "Hassan Raza", memberCount: 6 },
+    ],
+    recentActivity: ["Ahmed Khan completed assessment", "Hassan Raza added to Frontend Guild", "Sprint 42 velocity report generated"],
+  },
+  {
+    id: "dept_2", name: "Design", description: "Product design, UX research, and brand identity.", manager: "Yasir Hassan", head: "Yasir Hassan",
+    employeeCount: 18, teamCount: 2, status: "active", color: "#7c3aed", createdDate: "Mar 2022",
+    assessmentCompletion: 88, avgCompatibility: 90, memberIds: ["emp_2"],
+    teams: [{ id: "t3", name: "UX Research", lead: "Yasir Hassan", memberCount: 5 }],
+    recentActivity: ["Design system v2 shipped", "Yasir Hassan updated team roster"],
+  },
+  {
+    id: "dept_3", name: "QA", description: "Quality assurance and automated testing pipelines.", manager: "Bilal Raza", head: "Bilal Raza",
+    employeeCount: 14, teamCount: 2, status: "active", color: "#b45309", createdDate: "Nov 2021",
+    assessmentCompletion: 79, avgCompatibility: 85, memberIds: ["emp_5"],
+    teams: [{ id: "t4", name: "Automation", lead: "Bilal Raza", memberCount: 7 }],
+    recentActivity: ["Test coverage reached 84%", "Bilal Raza completed assessment"],
+  },
+  {
+    id: "dept_4", name: "DevOps", description: "Infrastructure, CI/CD, and platform reliability.", manager: "Hamza Khan", head: "Adnan Malik",
+    employeeCount: 8, teamCount: 1, status: "active", color: "#0369a1", createdDate: "Feb 2022",
+    assessmentCompletion: 100, avgCompatibility: 94, memberIds: ["emp_3"],
+    teams: [{ id: "t5", name: "Platform SRE", lead: "Adnan Malik", memberCount: 8 }],
+    recentActivity: ["Zero-downtime deploy achieved", "Adnan Malik onboarded"],
+  },
+  {
+    id: "dept_5", name: "HR", description: "People operations, hiring, and culture programs.", manager: "Waleed Asghar", head: "Waleed Asghar",
+    employeeCount: 12, teamCount: 2, status: "active", color: "#be185d", createdDate: "May 2021",
+    assessmentCompletion: 95, avgCompatibility: 92, memberIds: ["emp_8"],
+    teams: [{ id: "t6", name: "Talent Acquisition", lead: "Waleed Asghar", memberCount: 5 }],
+    recentActivity: ["Q3 hiring plan approved", "Waleed Asghar ran culture survey"],
+  },
+  {
+    id: "dept_6", name: "Management", description: "Executive leadership and strategic direction.", manager: "Tamoor Hayat", head: "Tamoor Hayat",
+    employeeCount: 6, teamCount: 1, status: "active", color: "#065f46", createdDate: "Aug 2020",
+    assessmentCompletion: 100, avgCompatibility: 96, memberIds: ["emp_6"],
+    teams: [{ id: "t7", name: "Executive Committee", lead: "Tamoor Hayat", memberCount: 6 }],
+    recentActivity: ["Q3 OKRs reviewed", "Board presentation delivered"],
+  },
 ];
 
 // ─── 10 Assessment Configuration Modules ──────────────────────────────────────

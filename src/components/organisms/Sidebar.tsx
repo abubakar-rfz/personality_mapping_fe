@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   ChevronsUpDown,
   Menu,
@@ -153,6 +154,7 @@ function SidebarNavigation({
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
+  const t = useTranslations("Common");
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -162,6 +164,20 @@ function SidebarNavigation({
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  const navKeyMap: Record<string, string> = {
+    "/": "dashboard",
+    "/assessments": "assessments",
+    "/employees": "employees",
+    "/personality-reports": "personalityReports",
+    "/team-analytics": "teamAnalytics",
+    "/ai-recommendations": "aiRecommendations",
+    "/projects": "projects",
+    "/clients": "clients",
+    "/question-bank": "questionBank",
+    "/reports": "reports",
+    "/settings": "settings",
+  };
+
   return (
     <nav aria-label="Main navigation" className="space-y-0.5 px-3">
       <div className="mb-2 px-3 pt-2">
@@ -169,15 +185,19 @@ function SidebarNavigation({
           Overview
         </p>
       </div>
-      {SIDEBAR_NAV_ITEMS.map((item) => (
-        <SidebarItem
-          key={item.href}
-          item={item}
-          isActive={isActive(item.href)}
-          collapsed={collapsed}
-          onNavigate={onNavigate}
-        />
-      ))}
+      {SIDEBAR_NAV_ITEMS.map((item) => {
+        const key = navKeyMap[item.href];
+        const label = key ? t(key as any) : item.label;
+        return (
+          <SidebarItem
+            key={item.href}
+            item={{ ...item, label }}
+            isActive={isActive(item.href)}
+            collapsed={collapsed}
+            onNavigate={onNavigate}
+          />
+        );
+      })}
     </nav>
   );
 }

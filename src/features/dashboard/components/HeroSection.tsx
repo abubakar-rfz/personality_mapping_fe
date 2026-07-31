@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { FileText, Play } from "lucide-react";
 
 import { Button } from "@/components/atoms/button";
@@ -12,7 +13,11 @@ function getGreeting(): string {
 }
 
 export function HeroSection() {
-  const greeting = getGreeting();
+  const [greeting, setGreeting] = useState("Hello");
+
+  useEffect(() => {
+    setGreeting(getGreeting());
+  }, []);
 
   return (
     <section className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

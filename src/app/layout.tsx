@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 
 import { PageLayout } from "@/components/organisms/PageLayout";
 import { Sidebar } from "@/components/organisms/Sidebar";
 import { TopNavbar } from "@/components/organisms/TopNavbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { NextIntlAppProvider } from "@/components/providers/next-intl-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,27 +35,33 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full bg-[#F8FAFC] dark:bg-[#0a0a0a] antialiased`}
     >
-      <body className="min-h-full bg-[#F8FAFC] dark:bg-[#0a0a0a] font-sans text-[#111827] dark:text-zinc-100">
+      <body
+        suppressHydrationWarning
+        className="min-h-full bg-[#F8FAFC] dark:bg-[#0a0a0a] font-sans text-[#111827] dark:text-zinc-100"
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen bg-[#F8FAFC] dark:bg-[#0a0a0a]">
-            <Sidebar />
+          <NextIntlAppProvider>
+            <Toaster position="bottom-right" richColors closeButton />
+            <div className="flex min-h-screen bg-[#F8FAFC] dark:bg-[#0a0a0a]">
+              <Sidebar />
 
-            <div
-              id="app-scroll"
-              className="flex min-h-screen min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto bg-[#F8FAFC] dark:bg-[#0a0a0a]"
-            >
-              <TopNavbar />
+              <div
+                id="app-scroll"
+                className="flex min-h-screen min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto bg-[#F8FAFC] dark:bg-[#0a0a0a]"
+              >
+                <TopNavbar />
 
-              <main className="flex-1 px-4 pb-8 md:px-6 lg:px-8">
-                <PageLayout>{children}</PageLayout>
-              </main>
+                <main className="flex-1 px-4 pb-8 md:px-6 lg:px-8">
+                  <PageLayout>{children}</PageLayout>
+                </main>
+              </div>
             </div>
-          </div>
+          </NextIntlAppProvider>
         </ThemeProvider>
       </body>
     </html>

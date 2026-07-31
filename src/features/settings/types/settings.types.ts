@@ -20,11 +20,30 @@ export interface SettingsNavItem {
   icon: LucideIcon;
 }
 
+export interface DepartmentTeam {
+  id: string;
+  name: string;
+  lead: string;
+  memberCount: number;
+}
+
 export interface DepartmentSetting {
   id: string;
   name: string;
+  description?: string;
+  head?: string;
   employeeCount: number;
   manager: string;
+  teamCount?: number;
+  status?: "active" | "archived";
+  color?: string;
+  icon?: string;
+  createdDate?: string;
+  assessmentCompletion?: number;
+  avgCompatibility?: number;
+  memberIds?: string[];
+  teams?: DepartmentTeam[];
+  recentActivity?: string[];
 }
 
 export interface AssessmentConfigItem {
